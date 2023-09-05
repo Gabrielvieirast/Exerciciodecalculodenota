@@ -1,0 +1,38 @@
+print("Sistema para Cálculo de Notas dos Alunos")
+print("Informe os Dados do Aluno: ")
+nomeAluno = input("Nome do Aluno: ")
+n1 = float (input("Digite a nota N1: "))
+n2 = float (input("Digite a nota N2: "))
+frequencia = float (input("Digite a Frequência do Aluno: "))
+
+provaFinal = 0.0
+media = (n1 + n2)/2
+
+
+if media >= 7.5 and frequencia >= 75:
+   situacaoFinal = ("Aluno Aprovado!")
+elif media >= 7.5 and frequencia < 75:
+   print("Aluno Reprovado por falta de Frequência!")
+elif media < 4.0:
+   situacaoFinal = ("Aluno Reprovado por Nota!")
+elif media >= 4.0 and media < 7.5 and frequencia < 75:
+   print("Aluno Reprovado por falta de Frequência!")
+elif media >= 4.0 and media < 7.5 and frequencia >= 75:
+   print("Aluno necessita de Prova final!")
+   provaFinal = float(input("Digite a nota da Prova final: "))
+   if provaFinal >= 7.5:
+    print("Aluno Aprovado Após Prova Final!")
+   else:
+    print("Aluno Reprovado Após Prova Final!")
+else:
+  print("N1 e/ou N2 fora do intervalo válido!")
+
+
+print()
+print("Relatório do Aluno: ")
+print("Nome do Aluno: ", nomeAluno)
+print("Nota N1: ", n1)
+print("Nota N2: ", n2)
+print("Media N1+N2: ", media)
+print("Frequência do Aluno: ", frequencia)
+print("Nota Prova final: ", provaFinal)
