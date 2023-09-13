@@ -1,23 +1,35 @@
+#Sistema de Cálculo de Nota Geral de Alunos
+#Autor: Gabriel Vieira Santos Teles
+#Turma: ADS
+#No Bimestre letivo, o Aluno Realiza duas provas escritas que valem no máximo 5 pontos cada, Um projeto que vale 3 pontos, e atividades que valem 2 pontos.
+#A Média Geral necessária para aprovação do aluno, é de 7.5 pontos, além disso, obrigatoriamente o aluno deve ter frequência igual ou superior a 75% no período.
+#Se a média Geral for Menor que 7.5 e maior que 4.0, é necessário fazer uma prova escrita final, que vale de 0 a 10, precisando de pelo menos 7.5 de nota.
+
+
 print("Sistema para Cálculo de Notas dos Alunos")
-print("Informe os Dados do Aluno: ")
+print("Informe os Dados do Aluno ")
 nomeAluno = input("Nome do Aluno: ")
-n1 = float (input("Digite a nota N1: "))
-n2 = float (input("Digite a nota N2: "))
-frequencia = float (input("Digite a Frequência do Aluno: "))
+n1 = float (input("Digite a nota da Primeira Prova Escrita: "))
+n2 = float (input("Digite a nota da Segunda Prova Escrita: "))
+atividades = float (input("Digite a Nota das Atividades feitas pelo Aluno: "))
+projeto = float (input("Digite a Nota do Projeto feito pelo Aluno: "))
+frequencia = int (input("Digite a Frequência do Aluno: "))
 
+
+mediaProvaescrita = (n1 + n2)/2
+mediaGeral = mediaProvaescrita + atividades + projeto
 provaFinal = 0.0
-media = (n1 + n2)/2
 
 
-if media >= 7.5 and frequencia >= 75:
+if mediaGeral >= 7.5 and frequencia >= 75:
    situacaoFinal = ("Aluno Aprovado!")
-elif media >= 7.5 and frequencia < 75:
+elif mediaGeral >= 7.5 and frequencia < 75:
    print("Aluno Reprovado por falta de Frequência!")
-elif media < 4.0:
+elif mediaGeral < 4.0:
    situacaoFinal = ("Aluno Reprovado por Nota!")
-elif media >= 4.0 and media < 7.5 and frequencia < 75:
+elif mediaGeral >= 4.0 and mediaGeral < 7.5 and frequencia < 75:
    print("Aluno Reprovado por falta de Frequência!")
-elif media >= 4.0 and media < 7.5 and frequencia >= 75:
+elif mediaGeral >= 4.0 and mediaGeral < 7.5 and frequencia >= 75:
    print("Aluno necessita de Prova final!")
    provaFinal = float(input("Digite a nota da Prova final: "))
    if provaFinal >= 7.5:
@@ -33,6 +45,9 @@ print("Relatório do Aluno: ")
 print("Nome do Aluno: ", nomeAluno)
 print("Nota N1: ", n1)
 print("Nota N2: ", n2)
-print("Media N1+N2: ", media)
+print("Media Prova Escrita: ", mediaProvaescrita)
+print("Nota do Projeto: ", projeto)
+print("Nota das Atividades: ", atividades)
 print("Frequência do Aluno: ", frequencia)
+print("Média Geral: ", mediaGeral)
 print("Nota Prova final: ", provaFinal)
