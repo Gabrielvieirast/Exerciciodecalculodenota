@@ -22,11 +22,11 @@ provaFinal = 0.0
 
 
 if mediaGeral >= 7.5 and frequencia >= 75:
-   situacaoFinal = ("Aluno Aprovado!")
+   print("Aluno Aprovado!")
 elif mediaGeral >= 7.5 and frequencia < 75:
    print("Aluno Reprovado por falta de Frequência!")
 elif mediaGeral < 4.0:
-   situacaoFinal = ("Aluno Reprovado por Nota!")
+   print("Aluno Reprovado por Nota!")
 elif mediaGeral >= 4.0 and mediaGeral < 7.5 and frequencia < 75:
    print("Aluno Reprovado por falta de Frequência!")
 elif mediaGeral >= 4.0 and mediaGeral < 7.5 and frequencia >= 75:
